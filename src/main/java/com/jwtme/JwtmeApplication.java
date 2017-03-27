@@ -15,7 +15,7 @@ public class JwtmeApplication {
 		SpringApplication.run(JwtmeApplication.class, args);
 	}
 	
-	@RequestMapping("/hello")
+	@RequestMapping("/home")
 	public String hello() {
 		return "Hello buddy!";
 	}
