@@ -10,7 +10,7 @@ public class UserController {
 	@RequestMapping("/users")
 	@ResponseBody
 	public String getUsers() {
-		return "{\"users\":[{\"firstname\":\"Richard\", \"lastname\":\"Feynman\"}," +
-		           "{\"firstname\":\"Marie\",\"lastname\":\"Curie\"}]}";
+		return "{\"users\":[{\"name\":\"Lucas\", \"country\":\"Brazil\"}," +
+		           "{\"name\":\"Jackie\",\"country\":\"China\"}]}";
 	}
 }
