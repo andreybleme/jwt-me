@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
-@EnableAutoConfiguration
 public class JwtmeApplication {
 
 	public static void main(String[] args) {
