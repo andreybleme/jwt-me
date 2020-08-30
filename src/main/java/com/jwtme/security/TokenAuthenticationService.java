@@ -1,5 +1,6 @@
 package com.jwtme.security;
 
+import java.io.IOException;
 import java.util.Collections;
 import java.util.Date;
 
@@ -20,14 +21,13 @@ public class TokenAuthenticationService {
 	static final String TOKEN_PREFIX = "Bearer";
 	static final String HEADER_STRING = "Authorization";
 	
-	static void addAuthentication(HttpServletResponse response, String username) {
+	static void addAuthentication(HttpServletResponse response, String username) throws IOException {
 		String JWT = Jwts.builder()
 				.setSubject(username)
 				.setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
 				.signWith(SignatureAlgorithm.HS512, SECRET)
 				.compact();
-		
-		response.addHeader(HEADER_STRING, TOKEN_PREFIX + " " + JWT);
+		response.getWriter().write(JWT);
 	}
 	
 	static Authentication getAuthentication(HttpServletRequest request) {
